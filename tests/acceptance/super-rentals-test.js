@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { click, visit, currentURL} from '@ember/test-helpers';
+import { click, visit, currentURL } from '@ember/test-helpers';
 import { setupApplicationTest } from 'super-rentals/tests/helpers';
 
 module('Acceptance | super rentals', function (hooks) {
@@ -17,11 +17,11 @@ module('Acceptance | super rentals', function (hooks) {
     assert.strictEqual(currentURL(), '/about');
   });
 
-  test("visiting /about", async function (assert) {
-    await visit("/about");
-    
+  test('visiting /about', async function (assert) {
+    await visit('/about');
+
     assert.strictEqual(currentURL, '/about');
-    assert.dom("h2").hasText("About Super Rentals");
+    assert.dom('h2').hasText('About Super Rentals');
 
     assert.dom('.jumbo a.button').hasText('Contact Us');
     await click('.jumbo a.button');
@@ -29,11 +29,11 @@ module('Acceptance | super rentals', function (hooks) {
     assert.strictEqual(currentURL, '/getting-in-touch');
   });
 
-  test("visiting /getting-in-touch", async function (assert) {
-    await visit("/getting-in-touch");
+  test('visiting /getting-in-touch', async function (assert) {
+    await visit('/getting-in-touch');
 
-    assert.strictEqual(currentURL, "/getting-in-touch");
-    assert.dom("h2").hasText("Contact Us");
+    assert.strictEqual(currentURL, '/getting-in-touch');
+    assert.dom('h2').hasText('Contact Us');
 
     assert.dom('.jumbo a.button').hasText('About');
     await click('.jumbo a.button');
